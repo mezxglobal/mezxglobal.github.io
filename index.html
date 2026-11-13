@@ -1,952 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MezX - Intelligent accounting, financial verification and compliance solutions.">
-<title>MezX | Financial Intelligence</title>
-
-<style>
-:root {
-    --blackcurrant: #24132F;
-    --purple: #68418A;
-    --light-purple: #A98BC5;
-    --white: #FFFFFF;
-    --paper: #FBF9FC;
-    --ink: #21172B;
-    --muted: #766D80;
-    --border: #E9E1EF;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    width: min(1120px, 90%);
-    margin: auto;
-}
-
-/* NAVIGATION */
-
-header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
-    min-height: 76px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: var(--blackcurrant);
-    font-size: 29px;
-    font-weight: 800;
-    letter-spacing: -1.5px;
-}
-
-.logo span {
-    color: var(--purple);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: var(--muted);
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.nav-links a:hover {
-    color: var(--purple);
-}
-
-.nav-button {
-    background: var(--blackcurrant);
-    color: white !important;
-    padding: 11px 20px;
-    border-radius: 6px;
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 27px;
-    color: var(--blackcurrant);
-    cursor: pointer;
-}
-
-/* HERO */
-
-.hero {
-    padding: 105px 0 95px;
-    background:
-        radial-gradient(circle at 85% 20%, #E9DDF2, transparent 32%),
-        var(--paper);
-}
-
-.hero-content {
-    max-width: 760px;
-}
-
-.eyebrow {
-    color: var(--purple);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 12px;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    color: var(--blackcurrant);
-    font-size: clamp(42px, 6vw, 68px);
-    line-height: 1.08;
-    letter-spacing: -2.5px;
-    margin-bottom: 25px;
-}
-
-.hero h1 span {
-    color: var(--purple);
-}
-
-.hero p {
-    color: var(--muted);
-    font-size: 17px;
-    max-width: 650px;
-    margin-bottom: 32px;
-}
-
-.primary-button {
-    display: inline-block;
-    background: var(--purple);
-    color: white;
-    padding: 14px 25px;
-    border-radius: 6px;
-    font-weight: 700;
-    transition: 0.2s;
-}
-
-.primary-button:hover {
-    background: var(--blackcurrant);
-}
-
-.secondary-button {
-    display: inline-block;
-    margin-left: 12px;
-    padding: 13px 23px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--blackcurrant);
-    font-weight: 700;
-}
-
-/* INTRODUCTION */
-
-.intro {
-    background: var(--white);
-    padding: 85px 0;
-    text-align: center;
-}
-
-.section-heading {
-    color: var(--blackcurrant);
-    font-size: clamp(30px, 4vw, 42px);
-    line-height: 1.2;
-    margin-bottom: 18px;
-    letter-spacing: -1px;
-}
-
-.section-description {
-    max-width: 720px;
-    margin: auto;
-    color: var(--muted);
-    font-size: 16px;
-}
-
-/* DASHBOARD */
-
-.dashboard-section {
-    padding: 85px 0;
-    background: var(--blackcurrant);
-}
-
-.dashboard-section .section-heading {
-    color: white;
-}
-
-.dashboard-section .section-description {
-    color: #D2C5DC;
-}
-
-.dashboard {
-    margin-top: 45px;
-    background: white;
-    border-radius: 14px;
-    padding: 30px;
-    box-shadow: 0 20px 55px rgba(0,0,0,0.16);
-}
-
-.dashboard-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-}
-
-.dashboard-top h3 {
-    color: var(--blackcurrant);
-}
-
-.demo-label {
-    background: #F0E8F6;
-    color: var(--purple);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-}
-
-.metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.metric {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 22px;
-}
-
-.metric small {
-    color: var(--muted);
-    font-size: 12px;
-}
-
-.metric h2 {
-    color: var(--blackcurrant);
-    font-size: 30px;
-    margin-top: 9px;
-}
-
-.metric p {
-    color: var(--purple);
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.dashboard-note {
-    margin-top: 20px;
-    color: var(--muted);
-    font-size: 11px;
-}
-
-/* FEATURES */
-
-.features {
-    padding: 90px 0;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 42px;
-}
-
-.feature-card {
-    background: white;
-    border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.feature-icon {
-    width: 48px;
-    height: 48px;
-    background: #F0E8F6;
-    color: var(--purple);
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    font-size: 23px;
-    margin-bottom: 22px;
-}
-
-.feature-card h3 {
-    color: var(--blackcurrant);
-    font-size: 19px;
-    margin-bottom: 12px;
-}
-
-.feature-card p {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-/* FRAMEWORKS */
-
-.frameworks {
-    padding: 90px 0;
-    background: white;
-}
-
-.framework-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 42px;
-}
-
-.framework-card {
-    border: 1px solid var(--border);
-    padding: 23px;
-    border-radius: 8px;
-    transition: 0.2s;
-}
-
-.framework-card:hover {
-    border-color: var(--light-purple);
-    transform: translateY(-3px);
-}
-
-.framework-card h3 {
-    color: var(--blackcurrant);
-    font-size: 16px;
-    margin-bottom: 7px;
-}
-
-.framework-card p {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-/* COMPLIANCE */
-
-.compliance {
-    padding: 90px 0;
-    background: #F1EAF5;
-}
-
-.compliance-content {
-    max-width: 760px;
-}
-
-.compliance h2 {
-    color: var(--blackcurrant);
-    font-size: 38px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.compliance p {
-    color: var(--muted);
-    margin-bottom: 20px;
-}
-
-.compliance-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.compliance-list span {
-    background: white;
-    color: var(--purple);
-    padding: 9px 15px;
-    border-radius: 5px;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-/* PROCESS */
-
-.process {
-    padding: 90px 0;
-}
-
-.process-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 42px;
-}
-
-.process-card {
-    padding: 25px 0;
-}
-
-.process-number {
-    color: var(--light-purple);
-    font-size: 42px;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.process-card h3 {
-    color: var(--blackcurrant);
-    margin-bottom: 10px;
-}
-
-.process-card p {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-/* CONTACT */
-
-.contact {
-    padding: 85px 0;
-    background: var(--blackcurrant);
-    text-align: center;
-}
-
-.contact h2 {
-    color: white;
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.contact p {
-    color: #D2C5DC;
-    margin-bottom: 28px;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.contact-links a {
-    display: inline-block;
-    padding: 13px 22px;
-    border: 1px solid #8F75A5;
-    border-radius: 6px;
-    color: white;
-    font-weight: 700;
-}
-
-.contact-links a:hover {
-    background: var(--purple);
-}
-
-/* FOOTER */
-
-footer {
-    background: #190D22;
-    color: #C8B9D2;
-    padding: 35px 0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-logo {
-    color: white;
-    font-size: 24px;
-    font-weight: 800;
-}
-
-.footer-logo span {
-    color: var(--light-purple);
-}
-
-.footer-links {
-    display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: #C8B9D2;
-    font-size: 13px;
-}
-
-.footer-links a:hover {
-    color: white;
-}
-
-.copyright {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #493651;
-    font-size: 12px;
-    color: #A99AAF;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 25px 5%;
-        flex-direction: column;
-        align-items: flex-start;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hero {
-        padding: 75px 0;
-    }
-
-    .features-grid,
-    .framework-grid,
-    .process-grid,
-    .metrics {
-        grid-template-columns: 1fr;
-    }
-
-    .dashboard {
-        padding: 20px;
-    }
-
-    .contact h2 {
-        font-size: 32px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MezX helps finance teams detect irregularities, validate financial information, and navigate accounting and regulatory frameworks.">
+  <title>MezX — Financial clarity, at speed</title>
+  <link rel="stylesheet" href="mezx_style.css">
 </head>
-
 <body>
-
-<!-- NAVIGATION -->
 <header>
-    <div class="container">
-        <nav>
-            <a href="#home" class="logo">Mez<span>X</span></a>
-
-            <button class="menu-toggle" id="menuToggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">☰</button>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#about">About</a>
-                <a href="#platform">Platform</a>
-                <a href="#frameworks">Frameworks</a>
-                <a href="#compliance">Compliance</a>
-                <a href="#contact" class="nav-button">Contact Us</a>
-            </div>
-        </nav>
-    </div>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="MezX home"><span class="brand-mark">M</span>mezx</a>
+    <button class="menu-btn" aria-label="Toggle navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#platform">Platform</a><a href="#frameworks">Frameworks</a><a href="#compliance">Compliance</a><a href="#approach">Our approach</a>
+      <a class="nav-cta" href="mailto:mezx.global@proton.me">Talk to our team ↗</a>
+    </nav>
+  </div>
 </header>
 
-<main>
-
-<!-- HERO -->
-<section class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
-            <div class="eyebrow">Financial Intelligence & Verification</div>
-
-            <h1>
-                Clarity in every number.
-                <span>Confidence in every decision.</span>
-            </h1>
-
-            <p>
-                MezX is an intelligent accounting and financial
-                verification platform designed to help organizations
-                identify irregularities, validate financial information,
-                and navigate complex reporting and regulatory requirements.
-            </p>
-
-            <a href="#platform" class="primary-button">
-                Explore Our Platform
-            </a>
-
-            <a href="#contact" class="secondary-button">
-                Get in Touch
-            </a>
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Financial intelligence, reimagined</div>
+        <h1>Clarity in every number. <em>Confidence in every decision.</em></h1>
+        <p class="hero-copy">MezX is an intelligent accounting and financial verification platform designed to help organizations identify irregularities, validate financial information, and navigate complex reporting and regulatory requirements.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="mailto:mezx.global@proton.me">Request a conversation ↗</a>
+          <a class="text-link" href="#platform">Explore the platform</a>
         </div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="intro" id="about">
-    <div class="container">
-        <div class="eyebrow">About MezX</div>
-
-        <h2 class="section-heading">
-            Making financial information more reliable.
-        </h2>
-
-        <p class="section-description">
-            Financial information is essential to every organization.
-            MezX aims to simplify financial review by bringing accounting
-            analysis, irregularity detection, and compliance-oriented
-            verification into one intelligent platform.
-        </p>
-    </div>
-</section>
-
-<!-- DASHBOARD -->
-<section class="dashboard-section" id="platform">
-    <div class="container">
-        <div class="eyebrow">Platform Overview</div>
-
-        <h2 class="section-heading">
-            Financial insights at a glance.
-        </h2>
-
-        <p class="section-description">
-            A conceptual preview of how MezX could organize financial
-            review and highlight areas requiring attention.
-        </p>
-
-        <div class="dashboard">
-            <div class="dashboard-top">
-                <h3>Financial Review Dashboard</h3>
-                <span class="demo-label">ILLUSTRATIVE DEMO</span>
-            </div>
-
-            <div class="metrics">
-                <div class="metric">
-                    <small>Records Reviewed</small>
-                    <h2>24,860</h2>
-                    <p>Sample dashboard figure</p>
-                </div>
-
-                <div class="metric">
-                    <small>Review Status</small>
-                    <h2>Active</h2>
-                    <p>Sample dashboard status</p>
-                </div>
-
-                <div class="metric">
-                    <small>Review Indicators</small>
-                    <h2>Detected</h2>
-                    <p>Requires further examination</p>
-                </div>
-            </div>
-
-            <p class="dashboard-note">
-                Note: All figures and statuses above are illustrative
-                placeholders, not actual MezX results or platform performance.
-            </p>
+      </div>
+      <div class="visual" aria-label="Illustrative financial analytics dashboard">
+        <div class="dash">
+          <div class="dash-top"><span>FINANCIAL OVERVIEW / DEMO</span><span class="live">Illustrative view</span></div>
+          <div class="metric-row">
+            <div class="metric"><small>Records reviewed</small><strong>24,860</strong></div>
+            <div class="metric"><small>Review status</small><strong>In progress</strong></div>
+          </div>
+          <small style="color:#758179;font-size:10px">FINANCIAL ACTIVITY · SAMPLE DATA</small>
+          <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="alert"><span class="alert-icon">!</span><span><b>Exception review</b>Potential anomalies flagged for further examination</span></div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- FEATURES -->
-<section class="features">
-    <div class="container">
-        <div class="eyebrow">What We Aim to Do</div>
-
-        <h2 class="section-heading">
-            A smarter approach to financial review.
-        </h2>
-
-        <p class="section-description">
-            Bringing financial analysis and compliance-related
-            information together to support better organizational decisions.
-        </p>
-
-        <div class="features-grid">
-
-            <div class="feature-card">
-                <div class="feature-icon">⌕</div>
-                <h3>Detect Irregularities</h3>
-                <p>
-                    Identify unusual patterns, inconsistencies, and
-                    potential financial irregularities for further review.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">✓</div>
-                <h3>Validate Financial Results</h3>
-                <p>
-                    Support the review of financial information against
-                    relevant accounting and reporting frameworks.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">◎</div>
-                <h3>Understand Compliance</h3>
-                <p>
-                    Organize relevant regulatory requirements, reporting
-                    standards, and compliance considerations.
-                </p>
-            </div>
-
-        </div>
+  <div class="trust-strip">
+    <div class="wrap trust-inner">
+      <span>Designed around leading frameworks</span>
+      <strong>IFRS</strong><strong>GAAP</strong><strong>ISA</strong><strong>ISSB</strong><strong>Basel</strong><strong>FATF</strong><strong>OECD</strong>
     </div>
-</section>
+  </div>
 
-<!-- FRAMEWORKS -->
-<section class="frameworks" id="frameworks">
-    <div class="container">
-        <div class="eyebrow">Standards & Frameworks</div>
-
-        <h2 class="section-heading">
-            Built around global financial standards.
-        </h2>
-
-        <p class="section-description">
-            MezX is designed with reference to established international
-            accounting, auditing, sustainability, and regulatory frameworks.
-        </p>
-
-        <div class="framework-grid">
-
-            <div class="framework-card">
-                <h3>IFRS</h3>
-                <p>International Financial Reporting Standards.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>GAAP</h3>
-                <p>Generally Accepted Accounting Principles.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>IFRS S1 & S2</h3>
-                <p>ISSB sustainability-related disclosure standards.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>ISA</h3>
-                <p>International Standards on Auditing.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>Basel III / IV</h3>
-                <p>International banking regulatory standards.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>FATF Recommendations</h3>
-                <p>International standards addressing financial crime risks.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>IOSCO Principles</h3>
-                <p>Objectives and principles of securities regulation.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>G20 / OECD Principles</h3>
-                <p>Principles of corporate governance.</p>
-            </div>
-
-            <div class="framework-card">
-                <h3>World Bank / UNCITRAL</h3>
-                <p>Relevant international institutional and legal frameworks.</p>
-            </div>
-
-        </div>
+  <section id="platform">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The MezX platform</div>
+        <h2>From complex financial data to clearer insight.</h2>
+        <p>Bring review, verification, and regulatory context into one intelligent workflow. Help your team focus attention where it matters most.</p>
+      </div>
+      <div class="features">
+        <article class="feature"><span class="feature-num">01 / DETECT</span><h3>Identify irregularities</h3><p>Analyze financial records to surface unusual patterns, inconsistencies, and potential exceptions for timely investigation.</p></article>
+        <article class="feature"><span class="feature-num">02 / VERIFY</span><h3>Validate financial results</h3><p>Review calculations, classifications, and reporting outputs against selected accounting standards and defined methodologies.</p></article>
+        <article class="feature"><span class="feature-num">03 / NAVIGATE</span><h3>Understand compliance</h3><p>Support finance teams as they assess relevant tax, VAT, customs, reporting, and regulatory requirements across jurisdictions.</p></article>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- COMPLIANCE -->
-<section class="compliance" id="compliance">
-    <div class="container">
-        <div class="compliance-content">
-            <div class="eyebrow">Cross-Border Considerations</div>
-
-            <h2>
-                Financial compliance across borders.
-            </h2>
-
-            <p>
-                Financial operations involve different regulatory
-                environments. MezX aims to help organizations organize
-                and review relevant requirements across jurisdictions.
-            </p>
-
-            <div class="compliance-list">
-                <span>Regional Taxation</span>
-                <span>VAT Requirements</span>
-                <span>Customs Policies</span>
-                <span>Financial Reporting</span>
-                <span>Regulatory Requirements</span>
-            </div>
-        </div>
+  <section class="framework-section" id="frameworks">
+    <div class="wrap framework-grid">
+      <div class="framework-intro">
+        <div class="eyebrow">Standards & frameworks</div>
+        <h2>Built for a world of diverse financial rules.</h2>
+        <p>MezX is designed to support review workflows across internationally recognized standards and governance frameworks. Applicability depends on the organization, jurisdiction, and configured scope.</p>
+      </div>
+      <div class="framework-list">
+        <div class="framework"><small>01 · FINANCIAL REPORTING</small><strong>IFRS</strong><span>International Financial Reporting Standards</span></div>
+        <div class="framework"><small>02 · ACCOUNTING</small><strong>GAAP</strong><span>Generally Accepted Accounting Principles</span></div>
+        <div class="framework"><small>03 · SUSTAINABILITY</small><strong>IFRS S1 & S2</strong><span>ISSB sustainability disclosure standards</span></div>
+        <div class="framework"><small>04 · AUDITING</small><strong>ISA</strong><span>International Standards on Auditing</span></div>
+        <div class="framework"><small>05 · BANKING</small><strong>Basel III / IV</strong><span>Banking prudential and capital frameworks</span></div>
+        <div class="framework"><small>06 · FINANCIAL INTEGRITY</small><strong>FATF 40</strong><span>Recommendations on AML and CFT</span></div>
+        <div class="framework"><small>07 · MARKETS</small><strong>IOSCO</strong><span>Objectives and Principles of Securities Regulation</span></div>
+        <div class="framework"><small>08 · GOVERNANCE</small><strong>G20 / OECD</strong><span>Principles of Corporate Governance</span></div>
+        <div class="framework wide"><small>09 · INSTITUTIONAL & LEGAL FRAMEWORKS</small><strong>World Bank / UNCITRAL</strong><span>Relevant institutional guidance and international commercial-law frameworks</span></div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- PROCESS -->
-<section class="process">
-    <div class="container">
-        <div class="eyebrow">How It Works</div>
-
-        <h2 class="section-heading">
-            A simple approach to financial verification.
-        </h2>
-
-        <div class="process-grid">
-
-            <div class="process-card">
-                <div class="process-number">01</div>
-                <h3>Provide Financial Data</h3>
-                <p>
-                    Organize relevant financial records and information
-                    for review.
-                </p>
-            </div>
-
-            <div class="process-card">
-                <div class="process-number">02</div>
-                <h3>Analyze & Review</h3>
-                <p>
-                    Examine financial information for inconsistencies,
-                    unusual patterns, and relevant compliance requirements.
-                </p>
-            </div>
-
-            <div class="process-card">
-                <div class="process-number">03</div>
-                <h3>Generate Insights</h3>
-                <p>
-                    Present findings and areas requiring further
-                    examination to support informed decisions.
-                </p>
-            </div>
-
-        </div>
+  <section id="compliance">
+    <div class="wrap regions">
+      <div class="region-panel">
+        <div class="eyebrow" style="color:#d5e4da">Cross-border readiness</div>
+        <h3>One platform. Different regulatory contexts.</h3>
+        <p>Financial requirements vary by country, sector, entity type, and reporting period. MezX is intended to help teams work with jurisdiction-specific rule sets and documented review criteria.</p>
+        <div class="region-tags"><span>Taxation</span><span>VAT</span><span>Customs</span><span>Financial reporting</span><span>Regulatory policies</span></div>
+      </div>
+      <div class="region-copy">
+        <div class="eyebrow">Local context, global perspective</div>
+        <h2>Make regional complexity easier to manage.</h2>
+        <p>Configure review processes around applicable local tax laws, VAT rules, customs policies, and financial reporting requirements. Keep the relevant rules and review evidence connected to the financial information being assessed.</p>
+        <p>MezX supports informed review; final interpretation and compliance decisions should be confirmed by qualified professionals in the relevant jurisdiction.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="eyebrow">Connect With MezX</div>
-
-        <h2>Let's build financial clarity.</h2>
-
-        <p>
-            Connect with MezX to learn more about our vision
-            for intelligent financial analysis and verification.
-        </p>
-
-        <div class="contact-links">
-            <a href="mailto:hello@mezx.com">Email MezX</a>
-
-            <a href="https://www.linkedin.com/company/mezx"
-               target="_blank"
-               rel="noopener noreferrer">
-                Follow MezX on LinkedIn
-            </a>
-        </div>
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">A clearer workflow</div>
+        <h2>Less time searching. More time understanding.</h2>
+        <p>A structured approach helps teams move from raw records to actionable review outcomes.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><h3>Connect & organize</h3><p>Bring relevant financial records and supporting information into a structured review workflow.</p></div>
+        <div class="step"><b>02</b><h3>Analyze & compare</h3><p>Run configured checks, compare results with selected standards, and flag items that need attention.</p></div>
+        <div class="step"><b>03</b><h3>Review & report</h3><p>Give your team clear findings and supporting context to investigate, validate, and document decisions.</p></div>
+      </div>
     </div>
-</section>
+  </section>
 
+  <section class="cta">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center">A more confident way forward</div>
+      <h2>Bring greater clarity to your financial operations.</h2>
+      <p>Discover how MezX can support your organization's financial review and compliance workflows.</p>
+      <a class="btn-primary" href="mailto:mezx.global@proton.me">Contact MezX ↗</a>
+    </div>
+  </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
-    <div class="container">
-
-        <div class="footer-content">
-
-            <a href="#home" class="footer-logo">
-                Mez<span>X</span>
-            </a>
-
-            <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#platform">Platform</a>
-                <a href="#frameworks">Frameworks</a>
-                <a href="#contact">Contact</a>
-
-                <!-- LINKEDIN LINK -->
-                <a href="https://www.linkedin.com/company/mezx"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            <p>
-                © 2026 MezX. All rights reserved.
-            </p>
-            <p>
-                MezX is intended to support financial review and analysis.
-                It does not replace independent audit, legal, or tax advice.
-            </p>
-        </div>
-
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#home"><span class="brand-mark">M</span>mezx</a>
+        <p class="footer-note">Intelligent financial review, verification, and regulatory insight for a more transparent business world.</p>
+      </div>
+      <div class="footer-links"><a href="#platform">Platform</a><a href="#frameworks">Frameworks</a><a href="#compliance">Compliance</a><a href="mailto:mezx.global@proton.me">Contact</a><a href="https://www.linkedin.com/company/mezx" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
     </div>
+    <div class="company-facts"><span>Company size: 11–50 employees</span><span>Founded: 2026</span></div>
+    <div class="footer-bottom"><span>© 2026 MezX. All rights reserved.</span><span>MezX is a technology platform, not a substitute for professional audit, legal, or tax advice.</span></div>
+  </div>
 </footer>
-
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", function () {
-    const isOpen = navLinks.classList.toggle("active");
-    menuToggle.setAttribute("aria-expanded", isOpen);
-});
-
-document.querySelectorAll(".nav-links a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-    });
-});
-</script>
-
 </body>
 </html>
