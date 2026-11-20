@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080914">
+<title>MezX | Frequently Asked Questions</title>
+
+<style>
+:root {
+  --bg: #080914;
+  --panel: #101326;
+  --purple: #a98aff;
+  --gold: #d9b66c;
+  --text: #f3f0ff;
+  --muted: #a4a7bd;
+  --line: rgba(184,157,255,.17);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif; overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+.mezx-ending {
+  position: relative; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 35%, rgba(116,76,190,.13), transparent 55%),
+              linear-gradient(180deg,#080914,#0b0d1c 55%,#080914);
+}
+.faq-section {
+  max-width: 950px; margin: auto; padding: 100px 22px 85px;
+  position: relative; z-index: 1;
+}
+.eyebrow {
+  color: var(--gold); font-size: 11px; letter-spacing: 4px;
+  font-weight: 700; text-align: center; margin-bottom: 18px;
+}
+.section-title {
+  font-size: clamp(32px,5vw,48px); text-align: center;
+  letter-spacing: -1.5px; margin-bottom: 15px;
+}
+.section-description {
+  text-align: center; color: var(--muted); line-height: 1.8;
+  font-size: 14px; max-width: 570px; margin: 0 auto 48px;
+}
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  border: 1px solid var(--line); background: rgba(18,21,42,.75);
+  border-radius: 12px; overflow: hidden;
+  transition: border-color .3s, background .3s;
+}
+.faq-item:hover, .faq-item.active {
+  border-color: rgba(169,138,255,.55); background: rgba(25,27,53,.95);
+}
+.faq-question {
+  width: 100%; border: none; background: transparent; color: var(--text);
+  padding: 21px 23px; text-align: left; display: flex; align-items: center;
+  justify-content: space-between; gap: 15px; font-size: 15px;
+  font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.faq-question:focus-visible, a:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: 4px;
+}
+.faq-icon {
+  color: var(--purple); font-size: 23px; font-weight: 300;
+  transition: transform .3s; flex-shrink: 0;
+}
+.faq-item.active .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-answer p {
+  padding: 0 23px 22px; color: var(--muted);
+  font-size: 14px; line-height: 1.9;
+}
+.cta-section {
+  position: relative; text-align: center; padding: 95px 20px 105px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  background: radial-gradient(ellipse at center,rgba(122,83,206,.20),transparent 65%);
+}
+.cta-section::before, .cta-section::after {
+  content: ""; position: absolute; width: 330px; height: 330px;
+  border: 1px solid rgba(169,138,255,.10); border-radius: 50%;
+  left: 50%; top: 50%; transform: translate(-50%,-50%); pointer-events: none;
+}
+.cta-section::after { width: 470px; height: 470px; border-color: rgba(217,182,108,.08); }
+.cta-content { position: relative; z-index: 1; }
+.cta-title {
+  font-size: clamp(30px,5vw,47px); letter-spacing: -1.5px;
+  line-height: 1.2; margin-bottom: 16px;
+}
+.cta-title span {
+  background: linear-gradient(90deg,#c9aaff,#e2c78b,#b89aff);
+  background-clip: text; -webkit-background-clip: text; color: transparent;
+}
+.cta-description {
+  color: var(--muted); max-width: 590px; margin: 0 auto 30px;
+  line-height: 1.9; font-size: 14px;
+}
+.cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 13px; }
+.cta-btn {
+  display: inline-flex; justify-content: center; align-items: center;
+  padding: 15px 28px; border-radius: 50px; font-size: 13px;
+  font-weight: 700; letter-spacing: .3px; transition: .3s; cursor: pointer;
+}
+.primary-btn {
+  color: #111020; background: linear-gradient(110deg,#c9aaff,#e0c18a);
+  box-shadow: 0 0 25px rgba(185,145,255,.22);
+}
+.primary-btn:hover { transform: translateY(-4px); box-shadow: 0 0 35px rgba(185,145,255,.42); }
+.secondary-btn {
+  color: var(--text); border: 1px solid rgba(185,157,255,.55);
+  background: rgba(20,20,42,.65);
+}
+.secondary-btn:hover { background: rgba(169,138,255,.13); transform: translateY(-4px); }
+.tagline { margin-top: 27px; color: var(--gold); letter-spacing: 3px; font-size: 10px; font-weight: 700; }
+.footer { max-width: 1200px; margin: auto; padding: 75px 28px 25px; }
+.footer-top {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 45px; padding-bottom: 60px;
+}
+.brand-name {
+  font-size: 34px; font-weight: 800; letter-spacing: 3px;
+  background: linear-gradient(110deg,#e2d6ff,#a98aff,#d9b66c);
+  background-clip: text; -webkit-background-clip: text;
+  color: transparent; margin-bottom: 13px;
+}
+.brand-description { color: var(--muted); font-size: 13px; line-height: 1.9; max-width: 270px; }
+.footer-column h3 { font-size: 13px; margin-bottom: 22px; color: #e7ddff; letter-spacing: .5px; }
+.footer-column ul { list-style: none; }
+.footer-column li { margin-bottom: 14px; }
+.footer-column a {
+  color: var(--muted); font-size: 12px; transition: .25s; line-height: 1.6;
+}
+.footer-column a:hover { color: var(--purple); padding-left: 4px; }
+.footer-contact {
+  border-top: 1px solid var(--line); padding: 30px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 25px; flex-wrap: wrap;
+}
+.contact-label { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; margin-bottom: 12px; }
+.contact-address { color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 430px; }
+.contact-address strong { color: var(--text); font-weight: 600; }
+.contact-address a { color: var(--purple); }
+.footer-bottom {
+  border-top: 1px solid var(--line); padding: 22px 0;
+  display: flex; justify-content: space-between; gap: 15px;
+  flex-wrap: wrap; align-items: center;
+}
+.copyright { font-size: 11px; color: #777c96; }
+.legal-links { display: flex; gap: 20px; }
+.legal-links a { color: #8589a1; font-size: 11px; }
+.legal-links a:hover { color: var(--purple); }
+@media(max-width:800px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 38px 25px; }
+}
+@media(max-width:520px) {
+  .faq-section { padding: 75px 17px 65px; }
+  .faq-question { font-size: 13px; padding: 19px 16px; }
+  .faq-answer p { padding: 0 16px 19px; font-size: 13px; }
+  .cta-section { padding: 75px 18px; }
+  .cta-buttons { flex-direction: column; align-items: stretch; max-width: 290px; margin: auto; }
+  .footer { padding: 55px 20px 20px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 35px 18px; }
+  .brand-column { grid-column: 1 / -1; }
+  .footer-contact { align-items: flex-start; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+</style>
+</head>
+<body>
+<div class="mezx-ending">
+<section class="faq-section" id="faq">
+  <div class="eyebrow">MEZX · INTELLIGENCE ECOSYSTEM</div>
+  <h1 class="section-title">Frequently Asked Questions</h1>
+  <p class="section-description">
+    Everything you need to know about MezX, our intelligent
+    software products, and technology-enabled business solutions.
+  </p>
+  <div class="faq-list">
+    <div class="faq-item active">
+      <button class="faq-question" aria-expanded="true" aria-controls="faq-answer-1" id="faq-question-1">
+        What is MezX? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+        <p>MezX is a technology-driven business initiative focused on developing intelligent software products and technology-enabled solutions for accounting, compliance, financial intelligence and business management.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+        What products does MezX offer? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+        <p>The MezX product ecosystem includes MAI (MezX Accounting Intelligence), MCI (MezX Compliance Intelligence), MFI (MezX Financial Intelligence) and MFS (MezX Financial Standards). Each product addresses a distinct business and financial function.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+        Can I use MezX products independently? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+        <p>The products are designed around distinct functional areas. Organizations can explore individual solutions according to their requirements, with opportunities for integration across the MezX ecosystem.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+        Does MezX provide customized business solutions? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+        <p>MezX's business direction includes customized MIS development, business intelligence dashboards, data analysis, business process automation and enterprise technology solutions.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+        Can I request a product demonstration? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+        <p>Yes. You can contact the MezX team to discuss your requirements and request a product walkthrough or demonstration, subject to product availability.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
+        Are MezX products suitable for small and medium-sized businesses? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
+        <p>MezX's product direction includes solutions designed to support the financial information, reporting and management needs of businesses, including small and medium-sized enterprises.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7" id="faq-question-7">
+        How does MezX approach financial standards and compliance? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-7" role="region" aria-labelledby="faq-question-7">
+        <p>MFS is being conceptualized as a configurable standards and rules-verification platform. It is intended to help identify potential inconsistencies and exceptions, while supporting professional review.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8" id="faq-question-8">
+        How can I get started with MezX? <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-8" role="region" aria-labelledby="faq-question-8">
+        <p>Explore the products and services on this website, then contact the MezX team to discuss your organization's needs and possible next steps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-content">
+    <div class="eyebrow">THE NEXT EVOLUTION</div>
+    <h2 class="cta-title">The Future of Business<br><span>Intelligence Starts Here.</span></h2>
+    <p class="cta-description">Discover a connected ecosystem designed to transform financial information into clarity, insight and action. Explore new possibilities with MezX.</p>
+    <div class="cta-buttons">
+      <a href="#products" class="cta-btn primary-btn">Explore MezX Solutions →</a>
+      <a href="mailto:contact@mezx.com?subject=MezX%20Product%20Demonstration" class="cta-btn secondary-btn">Request a Demo</a>
+    </div>
+    <div class="tagline">EXPLORE · CONNECT · EVOLVE</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="brand-column">
+      <div class="brand-name">MezX</div>
+      <p class="brand-description">Technology. Intelligence. Evolution.<br><br>Building intelligent technology solutions to support better business understanding, financial clarity and informed decision-making.</p>
+    </div>
+    <div class="footer-column" id="products">
+      <h3>Our Products</h3>
+      <ul>
+        <li><a href="#mai">MAI — Accounting Intelligence</a></li>
+        <li><a href="#mci">MCI — Compliance Intelligence</a></li>
+        <li><a href="#mfi">MFI — Financial Intelligence</a></li>
+        <li><a href="#mfs">MFS — Financial Standards</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="#services">Business &amp; Financial Analytics</a></li>
+        <li><a href="#services">MIS Development</a></li>
+        <li><a href="#services">Process Automation</a></li>
+        <li><a href="#services">BI Dashboard Development</a></li>
+        <li><a href="#services">Enterprise Solutions</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#about">About MezX</a></li>
+        <li><a href="#technology">Our Technology</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+        <li><a href="mailto:contact@mezx.com">Contact MezX</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-contact">
+    <div>
+      <div class="contact-label">MEZX TECHNOLOGIES</div>
+      <p class="contact-address"><strong>Business Address</strong><br>Anchor Dream Building,<br>56/8, Palash Nagar, Mirpur,<br>Dhaka, Bangladesh.</p>
+    </div>
+    <div>
+      <div class="contact-label">GET IN TOUCH</div>
+      <p class="contact-address">For business enquiries, product information and demonstration requests:<br><a href="mailto:contact@mezx.com">Contact MezX →</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright">© 2026 MezX Technologies. All rights reserved.</div>
+    <div class="legal-links">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+(() => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  function setAnswerHeight(item) {
+    const answer = item.querySelector(".faq-answer");
+    answer.style.maxHeight = item.classList.contains("active")
+      ? answer.scrollHeight + "px"
+      : "0px";
+  }
+
+  faqItems.forEach((item) => {
+    const button = item.querySelector(".faq-question");
+    setAnswerHeight(item);
+
+    button.addEventListener("click", () => {
+      const wasActive = item.classList.contains("active");
+
+      faqItems.forEach((other) => {
+        other.classList.remove("active");
+        other.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        setAnswerHeight(other);
+      });
+
+      if (!wasActive) {
+        item.classList.add("active");
+        button.setAttribute("aria-expanded", "true");
+        setAnswerHeight(item);
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    document.querySelectorAll(".faq-item.active").forEach(setAnswerHeight);
+  });
+})();
+</script>
+</body>
+</html>
