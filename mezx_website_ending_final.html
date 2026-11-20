@@ -1,0 +1,338 @@
+<!-- UTF-8 HTML fragment: MEZX WEBSITE ENDING: CTA + FOOTER (FAQ excluded)
+     Insert this entire section immediately BEFORE the closing </body> tag
+     in your existing homepage file (usually index.html).
+-->
+
+<style>
+/* All styles are scoped to the MezX ending to avoid changing the existing website. */
+.mezx-ending {
+  --mezx-bg: #080914;
+  --mezx-purple: #a98aff;
+  --mezx-gold: #d9b66c;
+  --mezx-text: #f3f0ff;
+  --mezx-muted: #a4a7bd;
+  --mezx-line: rgba(184,157,255,.17);
+  position: relative;
+  overflow: hidden;
+  color: var(--mezx-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(116,76,190,.13), transparent 55%),
+    linear-gradient(180deg,#080914,#0b0d1c 55%,#080914);
+}
+.mezx-ending,
+.mezx-ending * { box-sizing: border-box; }
+.mezx-ending a { text-decoration: none; color: inherit; }
+
+.mezx-ending .eyebrow {
+  color: var(--mezx-gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.mezx-ending .cta-section {
+  position: relative;
+  text-align: center;
+  padding: 95px 20px 105px;
+  border-top: 1px solid var(--mezx-line);
+  border-bottom: 1px solid var(--mezx-line);
+  overflow: hidden;
+  background: radial-gradient(ellipse at center,rgba(122,83,206,.20),transparent 65%);
+}
+.mezx-ending .cta-section::before,
+.mezx-ending .cta-section::after {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgba(169,138,255,.10);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.mezx-ending .cta-section::after {
+  width: 470px;
+  height: 470px;
+  border-color: rgba(217,182,108,.08);
+}
+.mezx-ending .cta-content { position: relative; z-index: 1; }
+.mezx-ending .cta-title {
+  color: var(--mezx-text);
+  font-size: clamp(30px,5vw,47px);
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+.mezx-ending .cta-title span {
+  background: linear-gradient(90deg,#c9aaff,#e2c78b,#b89aff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.mezx-ending .cta-description {
+  color: var(--mezx-muted);
+  max-width: 590px;
+  margin: 0 auto 30px;
+  line-height: 1.9;
+  font-size: 14px;
+}
+.mezx-ending .cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+.mezx-ending .cta-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  transition: .3s;
+  cursor: pointer;
+}
+.mezx-ending .primary-btn {
+  color: #111020;
+  background: linear-gradient(110deg,#c9aaff,#e0c18a);
+  box-shadow: 0 0 25px rgba(185,145,255,.22);
+}
+.mezx-ending .primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(185,145,255,.42);
+}
+.mezx-ending .secondary-btn {
+  color: var(--mezx-text);
+  border: 1px solid rgba(185,157,255,.55);
+  background: rgba(20,20,42,.65);
+}
+.mezx-ending .secondary-btn:hover {
+  background: rgba(169,138,255,.13);
+  transform: translateY(-4px);
+}
+.mezx-ending .tagline {
+  margin-top: 27px;
+  color: var(--mezx-gold);
+  letter-spacing: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+.mezx-ending .footer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 75px 28px 25px;
+}
+.mezx-ending .footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 45px;
+  padding-bottom: 60px;
+}
+.mezx-ending .brand-name {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background: linear-gradient(110deg,#e2d6ff,#a98aff,#d9b66c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 13px;
+}
+.mezx-ending .brand-description {
+  color: var(--mezx-muted);
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 270px;
+}
+.mezx-ending .footer-column h3 {
+  color: #e7ddff;
+  font-size: 13px;
+  margin: 0 0 22px;
+  letter-spacing: .5px;
+}
+.mezx-ending .footer-column ul { list-style: none; margin: 0; padding: 0; }
+.mezx-ending .footer-column li { margin-bottom: 14px; }
+.mezx-ending .footer-column a {
+  color: var(--mezx-muted);
+  font-size: 12px;
+  transition: .25s;
+  line-height: 1.6;
+}
+.mezx-ending .footer-column a:hover {
+  color: var(--mezx-purple);
+  padding-left: 4px;
+}
+.mezx-ending .footer-contact {
+  border-top: 1px solid var(--mezx-line);
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.mezx-ending .contact-label {
+  color: var(--mezx-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.mezx-ending .contact-address {
+  color: var(--mezx-muted);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 430px;
+}
+.mezx-ending .contact-address strong { color: var(--mezx-text); font-weight: 600; }
+.mezx-ending .contact-address a { color: var(--mezx-purple); }
+.mezx-ending .footer-bottom {
+  border-top: 1px solid var(--mezx-line);
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.mezx-ending .copyright { font-size: 11px; color: #777c96; }
+.mezx-ending .legal-links { display: flex; gap: 20px; }
+.mezx-ending .legal-links a { color: #8589a1; font-size: 11px; }
+.mezx-ending .legal-links a:hover { color: var(--mezx-purple); }
+.mezx-ending a:focus-visible {
+  outline: 2px solid var(--mezx-gold);
+  outline-offset: 4px;
+}
+
+@media(max-width:800px) {
+  .mezx-ending .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 38px 25px;
+  }
+}
+@media(max-width:520px) {
+  .mezx-ending .cta-section { padding: 75px 18px; }
+  .mezx-ending .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 290px;
+    margin: auto;
+  }
+  .mezx-ending .footer { padding: 55px 20px 20px; }
+  .mezx-ending .footer-top { grid-template-columns: 1fr 1fr; gap: 35px 18px; }
+  .mezx-ending .brand-column { grid-column: 1 / -1; }
+  .mezx-ending .footer-contact { align-items: flex-start; }
+  .mezx-ending .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .mezx-ending *, .mezx-ending *::before, .mezx-ending *::after {
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+
+<div class="mezx-ending">
+  <!-- CALL TO ACTION -->
+  <section class="cta-section" aria-labelledby="mezx-cta-title">
+    <div class="cta-content">
+      <div class="eyebrow">THE NEXT EVOLUTION</div>
+      <h2 class="cta-title" id="mezx-cta-title">
+        The Future of Business<br>
+        <span>Intelligence Starts Here.</span>
+      </h2>
+      <p class="cta-description">
+        Discover a connected ecosystem designed to transform
+        financial information into clarity, insight and action.
+        Explore new possibilities with MezX.
+      </p>
+      <div class="cta-buttons">
+        <a href="#products" class="cta-btn primary-btn">Explore MezX Solutions →</a>
+        <a href="mailto:contact@mezx.com?subject=MezX%20Product%20Demonstration"
+           class="cta-btn secondary-btn">Request a Demo</a>
+      </div>
+      <div class="tagline">EXPLORE · CONNECT · EVOLVE</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="brand-column">
+        <div class="brand-name">MezX</div>
+        <p class="brand-description">
+          Technology. Intelligence. Evolution.<br><br>
+          Building intelligent technology solutions
+          to support better business understanding,
+          financial clarity and informed decision-making.
+        </p>
+      </div>
+
+      <div class="footer-column" id="products">
+        <h3>Our Products</h3>
+        <ul>
+          <li><a href="#mai">MezX Accounting Intelligence</a></li>
+          <li><a href="#mci">MezX Compliance Intelligence</a></li>
+          <li><a href="#mfi">MezX Financial Intelligence</a></li>
+          <li><a href="#mfs">MezX Financial Standards</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#services">Business &amp; Financial Analytics</a></li>
+          <li><a href="#services">MIS Development</a></li>
+          <li><a href="#services">Process Automation</a></li>
+          <li><a href="#services">BI Dashboard Development</a></li>
+          <li><a href="#services">Enterprise Solutions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#about">About MezX</a></li>
+          <li><a href="#technology">Our Technology</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+          <li><a href="mailto:contact@mezx.com">Contact MezX</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <div>
+        <div class="contact-label">MEZX TECHNOLOGIES</div>
+        <p class="contact-address">
+          <strong>Business Address</strong><br>
+          Anchor Dream Building,<br>
+          56/8, Palash Nagar, Mirpur,<br>
+          Dhaka, Bangladesh.
+        </p>
+      </div>
+      <div>
+        <div class="contact-label">GET IN TOUCH</div>
+        <p class="contact-address">
+          For business enquiries, product information
+          and demonstration requests:<br>
+          <a href="mailto:contact@mezx.com">Contact MezX →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">© 2026 MezX Technologies. All rights reserved.</div>
+      <div class="legal-links">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+</div>
