@@ -1,4 +1,4 @@
-# MezX Website — V7
+# MezX Website — V8.1
 
 A responsive, static website and interactive concept playground for the proposed MezX product ecosystem. Built with HTML, CSS and vanilla JavaScript; no build step or package manager is required.
 
